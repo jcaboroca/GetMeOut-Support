@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Liquid Background Mouse Follower
     const blobs = document.querySelectorAll('.blob');
     window.addEventListener('mousemove', (e) => {
-        const x = e.clientX / window.innerWidth;
-        const y = e.clientY / window.innerHeight;
+        const x = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+        const y = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
         
         blobs.forEach((blob, i) => {
-            const factor = (i + 1) * 20;
+            const factor = (i + 1) * 30;
             blob.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
         });
     });
